@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.spring.ioc.DriverFactoryBean" id="driver">
+        <property name="jdbcUrl" value="jdbc:mysql://106.12.137.47:3306"/>
+    </bean>
+
+
+    <bean class="com.spring.ioc.HelloSpring" id="helloSpring">
+        <property name="name" value="fineSpring"/>
+        <property name="sex" value="1"/>
+        <property name="fineSpring" ref="fineSpring"/>
+    </bean>
+
+    <bean id="fineSpring" class="com.spring.ioc.FineSpring">
+        <constructor-arg name="tell" value="1"/>
+    </bean>
+</beans>
